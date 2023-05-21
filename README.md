@@ -10,3 +10,4 @@ Current recipes:
 - Unpack blocks of amethyst to amethyst shards
 - More nether bricks
 - More red nether bricks
+- Unpackable glowstone
