@@ -6,7 +6,7 @@ on:
       - "v*"
 
 env:
-  RELEASE_NAME: "$RELEASE ${{ github.ref_name }}"
+  RELEASE_NAME: "LoopsRecipes ${{ github.ref_name }}"
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
       - name: Create Archive
         run: |
           cp images/icon/pack.png pack.png
-          zip -r "$RELEASE_NAME.zip" pack.mcmeta pack.png data/
+          zip -r "${{env.RELEASE_NAME}}.zip" pack.mcmeta pack.png data/
 
       - name: Create Release
         id: create_release
@@ -50,8 +50,8 @@ jobs:
       - name: Upload Archive
         uses: actions/upload-artifact@v3
         with:
-          name: $RELEASE_NAME
-          path: $RELEASE_NAME.zip
+          name: "${{env.RELEASE_NAME}}"
+          path: "${{env.RELEASE_NAME}}.zip"
 
       - name: Attach Archive to Release
         id: attach_archive
@@ -60,8 +60,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: $RELEASE.zip
-          asset_name: $RELEASE.zip
+          asset_path: "${{env.RELEASE_NAME}}.zip"
+          asset_name: "${{env.RELEASE_NAME}}.zip"
           asset_content_type: application/zip
 
       - name: Set Release Body
