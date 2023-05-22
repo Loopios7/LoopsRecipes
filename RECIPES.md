@@ -4,17 +4,29 @@
 
 ### Craftables
 
-#### Craftable saddle
+#### Amethyst buds and clusters
+
+> :twisted_rightwards_arrows: Shapeless recipe
+
+![Craftable small amethyst bud](images/crafting_table/craftables/small_amethyst_bud.png)
+
+![Craftable medium amethyst bud](images/crafting_table/craftables/medium_amethyst_bud.png)
+
+![Craftable large amethyst bud](images/crafting_table/craftables/large_amethyst_bud.png)
+
+![Craftable amethyst cluster](images/crafting_table/craftables/amethyst_cluster.png)
+
+#### Saddle
 
 <!-- TODO: Create image -->
 ![Craftable saddle](images/crafting_table/craftables/saddle.png)
 
-#### Craftable hoppers using barrels
+#### Hoppers using barrels
 
 <!-- TODO: Create image -->
 ![Craftable hoppers using barrels](images/crafting_table/craftables/hopper.png)
 
-#### Craftable Smooth Stone
+#### Smooth Stone
 
 <!-- TODO: Create image -->
 ![Craftable Smooth Stone](images/crafting_table/craftables/smooth_stone.png)
@@ -25,7 +37,9 @@
 
 ![Amethyst block to amethyst shards](images/crafting_table/unpackables/amethyst_shard.png)
 
-#### Glowstone block to glowstone dust ![Glowstone block to glowstone dust](images/crafting_table/unpackables/glowstone_dust.png)
+#### Glowstone block to glowstone dust
+
+![Glowstone block to glowstone dust](images/crafting_table/unpackables/glowstone_dust.png)
 
 ### Converters
 

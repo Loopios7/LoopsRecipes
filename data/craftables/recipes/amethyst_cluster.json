@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "result": {
+        "item": "minecraft:amethyst_cluster",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "item": "minecraft:amethyst_shard"
+        },
+        {
+            "item": "minecraft:amethyst_shard"
+        },
+        {
+            "item": "minecraft:amethyst_shard"
+        },
+        {
+            "item": "minecraft:amethyst_shard"
+        },
+        {
+            "item": "minecraft:amethyst_block"
+        }
+    ]
+}

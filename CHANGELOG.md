@@ -32,3 +32,9 @@ Added:
 Added:
 
 - Craft hoppers using barrels instead of chests
+
+## v1.9
+
+Added:
+
+- Craftable amethyst buds and clusters

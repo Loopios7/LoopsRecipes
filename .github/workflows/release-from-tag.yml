@@ -21,7 +21,7 @@ jobs:
           regex: false
 
       - name: Create Archive
-        run: zip -r LoopsRecipes.zip pack.mcmeta pack.png data/
+        run: zip -r LoopsRecipes.zip pack.mcmeta images/icon/pack.png data/
 
       - name: Create Release
         id: create_release
