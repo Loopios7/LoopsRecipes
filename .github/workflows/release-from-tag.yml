@@ -1,32 +1,67 @@
-name: Create Release from Tag
-on: 
+name: Create Release Archive
+
+on:
   push:
     tags:
       - "v*"
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@master
-    - name: Archive release
-      uses: thedoctor0/zip-release@0.7.1
-      with:
-        type: 'zip'
-        filename: '${{ github.event.repository.name }}.zip'
-        exclusions: '*.git*'
-    - name: Create GitHub release
-      uses: Roang-zero1/github-create-release-action@v3
-      with:
-        version_regex: ^v*
-        create_draft: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Upload archive to release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: '/'
-        asset_name: '${{ github.event.repository.name }}.zip'
-        tag: ${{ github.ref }}
-        overwrite: true
-        # body: "This is my release text"
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create Archive
+        run: zip -r LoopsRecipes.zip pack.mcmeta pack.png data/
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Get Changelog
+        id: get_changelog
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          awk -v version="${{ github.ref_name }}" '/^## / { if (found) exit; if ($2 == version) found = 1; } found && !/^## / { print; }' CHANGELOG.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Upload Archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: LoopsRecipes
+          path: LoopsRecipes.zip
+
+      - name: Attach Archive to Release
+        id: attach_archive
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: LoopsRecipes.zip
+          asset_name: LoopsRecipes.zip
+          asset_content_type: application/zip
+
+      - name: Set Release Body
+        uses: actions/github-script@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          script: |
+            const changelog = `${{ steps.get_changelog.outputs.changelog }}`;
+            const release_id = ${{ steps.create_release.outputs.id }};
+            github.rest.repos.updateRelease({
+              ...context.repo,
+              release_id,
+              body: changelog
+            });
