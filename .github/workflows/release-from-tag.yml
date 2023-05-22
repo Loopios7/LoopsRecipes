@@ -1,0 +1,32 @@
+name: Create Release from Tag
+on: 
+  push:
+    tags:
+      - "v*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Archive release
+      uses: thedoctor0/zip-release@0.7.1
+      with:
+        type: 'zip'
+        filename: '${{ github.event.repository.name }}.zip'
+        exclusions: '*.git*'
+    - name: Create GitHub release
+      uses: Roang-zero1/github-create-release-action@v3
+      with:
+        version_regex: ^v*
+        create_draft: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload archive to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: '/'
+        asset_name: '${{ github.event.repository.name }}.zip'
+        tag: ${{ github.ref }}
+        overwrite: true
+        # body: "This is my release text"
