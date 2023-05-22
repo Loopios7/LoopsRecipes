@@ -39,7 +39,7 @@ Added:
 
 - Craftable amethyst buds and clusters
 
-## v1.10
+## v1.10.1
 
 Changed:
 
