@@ -38,3 +38,10 @@ Added:
 Added:
 
 - Craftable amethyst buds and clusters
+
+## v1.10
+
+Changed:
+
+- Grouped amethyst recipes into a group called
+- Added icon to the datapack
