@@ -55,7 +55,6 @@ Added:
 
 Changed:
 
-- Categories for recipes
 - Updated pack.mcmeta to 12
 - Added missing images to RECIPES.md
 - Make hopper with barrels into one recipe
