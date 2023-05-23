@@ -28,7 +28,7 @@ Can be found in [RECIPES.md](RECIPES.md)
 
 ## Uninstallation
 
-1. Run `/function loopsrecipes:uninstall` to clear your inventory of all recipes
+1. Run `/function #loopsrecipes:uninstall` to clear your inventory of all recipes
 2. Remove the datapack from your world's datapacks folder
 3. Run `/reload` or restart your world
 
