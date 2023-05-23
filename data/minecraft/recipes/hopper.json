@@ -1,11 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
-  "group": "hopper",
   "key": {
-    "C": {
-      "item": "minecraft:chest"
-    },
+    "C": [
+      {
+        "item": "minecraft:chest"
+      },
+      {
+        "item": "minecraft:trapped_chest"
+      },
+      {
+        "item": "minecraft:barrel"
+      }
+    ],
     "I": {
       "item": "minecraft:iron_ingot"
     }

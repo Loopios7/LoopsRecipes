@@ -13,6 +13,7 @@ Added:
 - Convert deepslate to cobbled deepslate
 - Convert stone to cobblestone
 - Unpack blocks of amethyst to amethyst shards
+- Add craftable smooth stone
 
 ## v1.6
 
@@ -43,5 +44,18 @@ Added:
 
 Changed:
 
-- Grouped amethyst recipes into a group called
+- Grouped amethyst recipes into a group
 - Added icon to the datapack
+
+## v1.11
+
+Added:
+
+- Allow crafting hoppers using trapped chests instead of chests
+
+Changed:
+
+- Categories for recipes
+- Updated pack.mcmeta to 12
+- Added missing images to RECIPES.md
+- Make hopper with barrels into one recipe
