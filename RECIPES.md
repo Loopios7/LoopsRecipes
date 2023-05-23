@@ -16,9 +16,9 @@
 
 ![Craftable amethyst cluster](images/crafting_table/craftables/amethyst_cluster.png)
 
-#### Saddle
+#### Deepslate to cobbled deepslate
 
-![Craftable saddle](images/crafting_table/craftables/saddle.png)
+![Deepslate to cobbled deepslate](images/crafting_table/converters/cobbled_deepslate.png)
 
 #### Hoppers using barrels
 
@@ -28,9 +28,17 @@
 
 ![Craftable hoppers using trapped chests](images/crafting_table/craftables/hopper_trapped.png)
 
+#### Saddle
+
+![Craftable saddle](images/crafting_table/craftables/saddle.png)
+
 #### Smooth Stone
 
 ![Craftable Smooth Stone](images/crafting_table/craftables/smooth_stone.png)
+
+#### Stone to cobblestone
+
+![Stone to cobblestone](images/crafting_table/converters/cobblestone.png)
 
 ### Unpackables
 
@@ -41,16 +49,6 @@
 #### Glowstone block to glowstone dust
 
 ![Glowstone block to glowstone dust](images/crafting_table/unpackables/glowstone_dust.png)
-
-### Converters
-
-#### Deepslate to cobbled deepslate
-
-![Deepslate to cobbled deepslate](images/crafting_table/converters/cobbled_deepslate.png)
-
-#### Stone to cobblestone
-
-![Stone to cobblestone](images/crafting_table/converters/cobblestone.png)
 
 ### More Blocks
 

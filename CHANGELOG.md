@@ -58,3 +58,14 @@ Changed:
 - Updated pack.mcmeta to 12
 - Added missing images to RECIPES.md
 - Make hopper with barrels into one recipe
+
+## v1.12.5
+
+Added:
+
+- Function to uninstall the datapack removing all recipes
+
+Changed:
+
+- Refactored the code so they're sorted by type
+- Updated README.md to include credits

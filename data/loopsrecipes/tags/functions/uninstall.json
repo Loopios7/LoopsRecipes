@@ -1,0 +1,7 @@
+{
+    "values": [
+        "loopsrecipes_craftables:remove",
+        "loopsrecipes_unpackables:remove",
+        "loopsrecipes:messages/done"
+    ]
+}
