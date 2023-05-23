@@ -7,6 +7,7 @@ on:
 
 env:
   RELEASE_NAME: "LoopsRecipes ${{ github.ref_name }}"
+  RELEASE_VERSION: "${{ github.ref_name }}"
 
 jobs:
   build:
@@ -20,7 +21,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "<<VERSION>>"
-          replace: "${{ github.ref_name }}"
+          replace: "${{ env.RELEASE_VERSION }}"
           regex: false
 
       - name: Create Archive
@@ -44,7 +45,7 @@ jobs:
         run: |
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "changelog<<EOF" >> $GITHUB_OUTPUT
-          awk -v version="${{ github.ref_name }}" '/^## / { if (found) exit; if ($2 == version) found = 1; } found && !/^## / { print; }' CHANGELOG.md >> $GITHUB_OUTPUT
+          awk -v version="${{ env.RELEASE_VERSION }}" '/^## / { if (found) exit; if ($2 == version) found = 1; } found && !/^## / { print; }' CHANGELOG.md >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Upload Archive
