@@ -30,7 +30,7 @@
     ],
     "rewards": {
         "recipes": [
-            "barrel_hopper:hopper"
+            "craftables:hopper_using_barrel"
         ]
     }
 }

@@ -16,5 +16,6 @@
         "B": {
             "item": "minecraft:barrel"
         }
-    }
+    },
+    "group": "hopper"
 }

@@ -23,7 +23,6 @@
 
 #### Hoppers using barrels
 
-<!-- TODO: Create image -->
 ![Craftable hoppers using barrels](images/crafting_table/craftables/hopper.png)
 
 #### Smooth Stone
