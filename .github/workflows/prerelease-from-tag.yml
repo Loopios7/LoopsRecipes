@@ -1,0 +1,79 @@
+name: Create Release with Archive from Tag
+
+on:
+  push:
+    tags:
+      - "d*"
+
+env:
+  RELEASE_NAME: "LoopsRecipes ${{ github.ref_name }}"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Find and Replace Version Placeholders
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "<<VERSION>>"
+          replace: "${{ github.ref_name }}"
+          regex: false
+
+      - name: Create Archive
+        run: |
+          cp images/icon/pack.png pack.png
+          zip -r "${{env.RELEASE_NAME}}.zip" pack.mcmeta pack.png data/
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: true
+
+      - name: Get Changelog
+        id: get_changelog
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          awk -v version="${{ github.ref_name }}" '/^## / { if (found) exit; if ($2 == version) found = 1; } found && !/^## / { print; }' CHANGELOG.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Upload Archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: "${{env.RELEASE_NAME}}"
+          path: "${{env.RELEASE_NAME}}.zip"
+
+      - name: Attach Archive to Release
+        id: attach_archive
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "${{env.RELEASE_NAME}}.zip"
+          asset_name: "${{env.RELEASE_NAME}}.zip"
+          asset_content_type: application/zip
+
+      - name: Set Release Body
+        uses: actions/github-script@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          script: |
+            const changelog = `${{ steps.get_changelog.outputs.changelog }}`;
+            const release_id = ${{ steps.create_release.outputs.id }};
+            github.rest.repos.updateRelease({
+              ...context.repo,
+              release_id,
+              body: changelog
+            });
