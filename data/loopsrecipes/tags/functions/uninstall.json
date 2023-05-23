@@ -1,8 +1,8 @@
 {
     "values": [
-        "loopsrecipes:uninstall_start",
+        "loopsrecipes:messages/done",
         "loopsrecipes_craftables:remove",
         "loopsrecipes_unpackables:remove",
-        "loopsrecipes:done"
+        "loopsrecipes:messages/done"
     ]
 }
