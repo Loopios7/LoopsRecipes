@@ -8,7 +8,6 @@ on:
 env:
   PRERELEASE_NAME: "LoopsRecipes ${{ github.ref_name }}"
   PRERELEASE_VERSION: ${{ github.ref_name }}
-  RELEASE_VERSION: ${{ github.ref_name }} # This is changed in the build job
 
 jobs:
   build:
@@ -18,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set Release Name
+      - name: Set Release Version Environment Variable
         run: |
           echo "RELEASE_VERSION=r$(echo "${{env.PRERELEASE_NAME}}" | sed 's/^d//')" >> $GITHUB_ENV
 
