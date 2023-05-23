@@ -4,9 +4,13 @@
 
 # LoopsRecipes
 
-</div>
+*A collection of custom Minecraft crafting recipes*
 
-A collection of custom Minecraft crafting recipes
+![GitHub release (release name instead of tag name)](https://img.shields.io/github/v/release/loopios7/LoopsRecipes?include_prereleases)
+[![Create Release with Archive from Tag](https://github.com/Loopios7/LoopsRecipes/actions/workflows/release-from-tag.yml/badge.svg)](https://github.com/Loopios7/LoopsRecipes/actions/workflows/release-from-tag.yml)
+![GitHub Repo stars](https://img.shields.io/github/stars/loopios7/LoopsRecipes?color=white&logo=github)
+
+</div>
 
 ## Crafting recipes
 
@@ -44,7 +48,7 @@ Can be found in [CHANGELOG.md](CHANGELOG.md)
 
 - [ ] Add more recipes
 - [ ] Add functions to give all recipes
-- [ ] Add functions to clear inventory of all recipes
+- [x] Add functions to clear inventory of all recipes
 
 ## Credits
 
