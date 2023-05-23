@@ -9,3 +9,5 @@ recipe take @a loopsrecipes_craftables:medium_amethyst_bud
 recipe take @a loopsrecipes_craftables:saddle
 recipe take @a loopsrecipes_craftables:small_amethyst_bud
 recipe take @a loopsrecipes_craftables:smooth_stone
+
+function loopsrecipes:advancements/revoke/craftables

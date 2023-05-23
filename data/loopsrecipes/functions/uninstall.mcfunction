@@ -1,8 +1,8 @@
 # function loopsrecipes:uninstall
 
-say "Removing all of loopsrecipes from players..."
+tellraw @s {"text":"Uninstalling loops recipes...","color":"orange"}
 
 function loopsrecipes:recipes/take/craftables
 function loopsrecipes:recipes/take/unpackables
 
-say "Done!"
+tellraw @s {"text":"✔ Done","color":"green"}
