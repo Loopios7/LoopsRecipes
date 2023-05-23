@@ -47,7 +47,7 @@ Changed:
 - Grouped amethyst recipes into a group
 - Added icon to the datapack
 
-## v1.11.2
+## v1.11.3
 
 Added:
 

@@ -19,7 +19,7 @@ jobs:
 
       - name: Set Release Version Environment Variable
         run: |
-          echo "RELEASE_VERSION=r$(echo "${{env.PRERELEASE_NAME}}" | sed 's/^d//')" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=r$(echo "${{env.PRERELEASE_VERSION}}" | sed 's/^d//')" >> $GITHUB_ENV
 
       - name: Find and Replace Version Placeholders
         uses: jacobtomlinson/gha-find-replace@v3
