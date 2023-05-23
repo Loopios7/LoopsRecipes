@@ -1,13 +1,13 @@
-name: Create Release with Archive from Tag
+name: Create Prerelease with Archive from Tag
 
 on:
   push:
     tags:
-      - "v*"
+      - "d*"
 
 env:
-  RELEASE_NAME: "LoopsRecipes ${{ github.ref_name }}"
-  RELEASE_VERSION: "${{ github.ref_name }}"
+  PRERELEASE_NAME: "LoopsRecipes ${{ github.ref_name }}"
+  PRERELEASE_VERSION: ${{ github.ref_name }}
 
 jobs:
   build:
@@ -17,17 +17,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set Release Version Environment Variable
+        run: |
+          echo "RELEASE_VERSION=v$(echo "${{env.PRERELEASE_VERSION}}" | sed 's/^d//')" >> $GITHUB_ENV
+
       - name: Find and Replace Version Placeholders
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "<<VERSION>>"
-          replace: "${{ env.RELEASE_VERSION }}"
+          replace: "${{ env.PRERELEASE_VERSION }}"
           regex: false
 
       - name: Create Archive
         run: |
           cp images/icon/pack.png pack.png
-          zip -r "${{env.RELEASE_NAME}}.zip" pack.mcmeta pack.png data/
+          zip -r "${{env.PRERELEASE_NAME}}.zip" pack.mcmeta pack.png data/
 
       - name: Create Release
         id: create_release
@@ -38,7 +42,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
           draft: false
-          prerelease: false
+          prerelease: true
 
       - name: Get Changelog
         id: get_changelog
@@ -51,8 +55,8 @@ jobs:
       - name: Upload Archive
         uses: actions/upload-artifact@v3
         with:
-          name: "${{env.RELEASE_NAME}}"
-          path: "${{env.RELEASE_NAME}}.zip"
+          name: "${{env.PRERELEASE_NAME}}"
+          path: "${{env.PRERELEASE_NAME}}.zip"
 
       - name: Attach Archive to Release
         id: attach_archive
@@ -61,8 +65,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "${{env.RELEASE_NAME}}.zip"
-          asset_name: "${{env.RELEASE_NAME}}.zip"
+          asset_path: "${{env.PRERELEASE_NAME}}.zip"
+          asset_name: "${{env.PRERELEASE_NAME}}.zip"
           asset_content_type: application/zip
 
       - name: Set Release Body

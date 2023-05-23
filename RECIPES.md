@@ -18,16 +18,18 @@
 
 #### Saddle
 
-<!-- TODO: Create image -->
 ![Craftable saddle](images/crafting_table/craftables/saddle.png)
 
 #### Hoppers using barrels
 
 ![Craftable hoppers using barrels](images/crafting_table/craftables/hopper.png)
 
+#### Hoppers using trapped chests
+
+![Craftable hoppers using trapped chests](images/crafting_table/craftables/hopper_trapped.png)
+
 #### Smooth Stone
 
-<!-- TODO: Create image -->
 ![Craftable Smooth Stone](images/crafting_table/craftables/smooth_stone.png)
 
 ### Unpackables
@@ -44,22 +46,21 @@
 
 #### Deepslate to cobbled deepslate
 
-<!-- TODO: Create image -->
 ![Deepslate to cobbled deepslate](images/crafting_table/converters/cobbled_deepslate.png)
 
 #### Stone to cobblestone
 
-<!-- TODO: Create image -->
 ![Stone to cobblestone](images/crafting_table/converters/cobblestone.png)
 
 ### More Blocks
 
 #### More nether bricks
 
-<!-- TODO: Create image -->
 ![More nether bricks](images/crafting_table/more_blocks/nether_bricks.png)
 
 #### More red nether bricks
 
-<!-- TODO: Create image -->
 ![More red nether bricks](images/crafting_table/more_blocks/red_nether_bricks.png)
+
+ <!-- TODO: Make consistent 2x2 and 3x3 recipes -->
+ <!-- TODO: Adjust categories -->
