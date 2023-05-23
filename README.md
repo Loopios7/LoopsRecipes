@@ -1,8 +1,14 @@
-<!-- ICON -->
+<div align="center">
 
-# ![LoopsRecipes](images/icon/icon.png) LoopsRecipes
+<div style="width:100px;">
+
+![LoopsRecipes](images/icon/icon.png)
+
+</div>
 
 # LoopsRecipes
+
+</div>
 
 A collection of custom Minecraft crafting recipes
 
