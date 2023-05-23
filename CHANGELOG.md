@@ -59,7 +59,7 @@ Changed:
 - Added missing images to RECIPES.md
 - Make hopper with barrels into one recipe
 
-## v1.12.1
+## v1.12.2
 
 Added:
 

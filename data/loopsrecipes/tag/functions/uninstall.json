@@ -1,0 +1,8 @@
+{
+    "values": [
+        "loopsrecipes:uninstall_start",
+        "loopsrecipes_craftables:remove",
+        "loopsrecipes_unpackables:remove",
+        "loopsrecipes:done"
+    ]
+}

@@ -1,0 +1,1 @@
+tellraw @s {"text":"Uninstalling loops recipes...","color":"orange"}
