@@ -1,10 +1,6 @@
 <div align="center">
 
-<div style="width:100px;">
-
-![LoopsRecipes](images/icon/icon.png)
-
-</div>
+<img src="images/icon/icon.png" alt="Icon" width="120" height="120">
 
 # LoopsRecipes
 
