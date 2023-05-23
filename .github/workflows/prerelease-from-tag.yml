@@ -1,4 +1,4 @@
-name: Create Release with Archive from Tag
+name: Create Prerelease with Archive from Tag
 
 on:
   push:
