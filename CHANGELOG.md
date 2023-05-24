@@ -69,3 +69,10 @@ Changed:
 
 - Refactored the code so they're sorted by type
 - Updated README.md to include credits
+
+## v1.13.0
+
+Changed:
+
+- Stone to cobblestone recipe now uses a stonecutter instead of a crafting table
+- Deepslate to cobbled deepslate recipe now uses a stonecutter instead of a crafting table

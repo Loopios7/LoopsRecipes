@@ -18,7 +18,7 @@
 
 #### Deepslate to cobbled deepslate
 
-![Deepslate to cobbled deepslate](images/crafting_table/converters/cobbled_deepslate.png)
+![Deepslate to cobbled deepslate](images/stonecutter/cobbled_deepslate.png)
 
 #### Hoppers using barrels
 
@@ -38,7 +38,7 @@
 
 #### Stone to cobblestone
 
-![Stone to cobblestone](images/crafting_table/converters/cobblestone.png)
+![Stone to cobblestone](images/stonecutter/cobblestone.png)
 
 ### Unpackables
 

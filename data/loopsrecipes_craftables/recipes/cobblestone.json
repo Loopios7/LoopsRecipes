@@ -1,17 +1,8 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "result": {
-        "item": "minecraft:cobblestone",
-        "count": 9
+    "type": "minecraft:stonecutting",
+    "result": "minecraft:cobblestone",
+    "ingredient": {
+        "item": "minecraft:stone"
     },
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:stone"
-        }
-    }
+    "count": 1
 }
