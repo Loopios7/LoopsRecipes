@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        ":load",
+        "cauldron_de-slated_cobble:check_for_items_in_filled_cauldrons"
+    ]
+}
