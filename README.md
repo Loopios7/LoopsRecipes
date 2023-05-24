@@ -49,6 +49,7 @@ Can be found in [CHANGELOG.md](CHANGELOG.md)
 - [ ] Add more recipes
 - [ ] Add functions to give all recipes
 - [x] Add functions to clear inventory of all recipes
+- [ ] Add crafting table / furnace / smoker / blast furnace / campfire / smithing table / stonecutter icons
 
 ## Credits
 
