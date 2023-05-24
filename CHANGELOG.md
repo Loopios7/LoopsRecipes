@@ -77,7 +77,7 @@ Changed:
 - Stone to cobblestone recipe now uses a stonecutter instead of a crafting table
 - Deepslate to cobbled deepslate recipe now uses a stonecutter instead of a crafting table
 
-## v1.14.1
+## v1.14.2
 
 Added:
 
