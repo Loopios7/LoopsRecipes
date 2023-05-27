@@ -5,3 +5,7 @@
 - [ ] Gravel to flint (crafting table)
 - [ ] Cobblestone to gravel (stonecutter)
 - [ ] Cauldron recipe in RECIPES.md
+- [ ] Craftble shroomlight
+- [ ] Craftable crying obsidian
+- [ ] Craftable froglights
+- [ ] Craftable moss blocks
