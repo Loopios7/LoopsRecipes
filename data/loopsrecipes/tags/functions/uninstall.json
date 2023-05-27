@@ -2,6 +2,7 @@
     "values": [
         "loopsrecipes_craftables:remove",
         "loopsrecipes_unpackables:remove",
+        "cauldron_de-slated_cobble:uninstall",
         "loopsrecipes:messages/done"
     ]
 }

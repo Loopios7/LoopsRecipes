@@ -1,0 +1,2 @@
+data modify entity @s[nbt={Item: {id: "minecraft:cobbled_deepslate"}}] Item.id set value "minecraft:cobblestone"
+data modify entity @s[nbt={Item: {id: "minecraft:deepslate"}}] Item.id set value "minecraft:stone"
